@@ -1,6 +1,6 @@
 {
   "name": "@xassist/xassist-ajax",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generic ajax handler. With different events (ready, fail on progress)",
   "keywords": [
     "ajax",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "csv2readme": "^1.0.1",
     "rimraf": "^2.6.2",
-	"jsdom": "^11.6.2",
+    "jsdom": "^11.6.2",
     "rollup": "^0.56.3",
     "tape": "^4.9.0"
   },
