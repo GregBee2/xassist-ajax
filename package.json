@@ -1,6 +1,6 @@
 {
   "name": "@xassist/xassist-ajax",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Generic ajax handler. With different events (ready, fail on progress)",
   "keywords": [
     "ajax",
