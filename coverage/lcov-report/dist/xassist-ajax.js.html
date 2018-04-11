@@ -1,0 +1,1088 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for dist\xassist-ajax.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">dist/</a> xassist-ajax.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.46% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>110/142</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">53.66% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>44/82</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>26/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.01% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>110/141</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+* @preserve
+* https://github.com/GregBee2/xassist-ajax.git Version 0.0.1.
+*  Copyright 2018 Gregory Beirens.
+*  Created on Wed, 11 Apr 2018 11:08:49 GMT.
+*/
+(function (global, factory) {
+	typeof exports === 'object' &amp;&amp; typeof module !== 'undefined' ? factory(exports) :
+<span class="branch-1 cbranch-no" title="branch not covered" >	typeof define === 'function' &amp;&amp; define.amd ? define(['exports'], factory) :</span>
+	(factory((global.xa = global.xa || {})));
+}(this, (function (exports) { 'use strict';
+&nbsp;
+var _xhrObject=(function () { // Factory method.
+		var methods = [
+			function () {
+				return new XMLHttpRequest();
+			},
+<span class="fstat-no" title="function not covered" >			function () {</span>
+<span class="cstat-no" title="statement not covered" >				return new ActiveXObject('Msxml2.XMLHTTP');</span>
+			},
+<span class="fstat-no" title="function not covered" >			function () {</span>
+<span class="cstat-no" title="statement not covered" >				return new ActiveXObject('Microsoft.XMLHTTP');</span>
+			}
+		];
+		for (var i = 0, len = methods.length; i &lt; len; i++) {
+			try {
+				methods[i]();
+			} catch (e) {
+<span class="cstat-no" title="statement not covered" >				continue;</span>
+			}
+			// If we reach this point, method[i] worked.
+			// Memoize the method. by storing it in the variable
+			return methods[i];
+		}
+		// If we reach this point, none of the methods worked.
+<span class="cstat-no" title="statement not covered" >		throw new Error('AjaxHandler: Could not create an XHR object.');</span>
+	})(),
+	_statusCodeRanges=function(statusCode){
+		var ranges=["1xx Informational responses","2xx Success","3xx Redirection","4xx Client errors","5xx Server errors"],
+			unknown="?xx Unknown HTTPCode-range",
+			range=Math.floor(statusCode/100)-1;
+		<span class="missing-if-branch" title="else path not taken" >E</span>if(range&gt;=0&amp;&amp;range&lt;ranges.length){
+			return ranges[range];
+		}
+<span class="cstat-no" title="statement not covered" >		return unknown+" ("+statusCode+")";</span>
+	},
+	_statusCodesDetails={"200":"ok","304":"Not Modified (does NOT count as success!)","400":"bad request","401":"authentication needed",
+		"403":"unauthorized (no auth needed)","404":"not found","414":"uri to long","429":"too many requests",
+		"500":"internal server error","503":"service unavailable (try again)"};
+	//not used may be usefull?
+<span class="fstat-no" title="function not covered" >	function getAbsoluteURL(url,base_url) {</span>
+<span class="cstat-no" title="statement not covered" >		var doc      = document</span>
+			, old_base = doc.getElementsByTagName('base')[0]
+			, old_href = old_base &amp;&amp; old_base.href
+			, doc_head = doc.head || doc.getElementsByTagName('head')[0]
+			, our_base = old_base || doc_head.appendChild(doc.createElement('base'))
+			, resolver = doc.createElement('a')
+			, resolved_url;
+<span class="cstat-no" title="statement not covered" >		our_base.href = base_url || '';</span>
+<span class="cstat-no" title="statement not covered" >		resolver.href = url;</span>
+<span class="cstat-no" title="statement not covered" >		resolved_url  = resolver.href; </span>// browser magic at work here
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if (old_base) <span class="cstat-no" title="statement not covered" >old_base.href = old_href;</span></span>
+		else <span class="cstat-no" title="statement not covered" >doc_head.removeChild(our_base);</span>
+<span class="cstat-no" title="statement not covered" >		return resolved_url;</span>
+	}	function xassistAjax(url,opts){
+		var _handler=new AJAXHandler(url,opts);
+		var me;
+		me={
+			on:<span class="fstat-no" title="function not covered" >function(event,cb,thisArg){</span>
+<span class="cstat-no" title="statement not covered" >				if(event==="success"){</span>
+<span class="cstat-no" title="statement not covered" >					_handler.addSuccessHandler(cb,thisArg);</span>
+				}
+				else <span class="cstat-no" title="statement not covered" >if(event==="fail"){</span>
+<span class="cstat-no" title="statement not covered" >					_handler.addFailHandler(cb,thisArg);</span>
+				}
+				else <span class="cstat-no" title="statement not covered" >if(event==="progress"){</span>
+<span class="cstat-no" title="statement not covered" >					_handler.addProgressHandler(cb,thisArg);</span>
+				}
+				else <span class="cstat-no" title="statement not covered" >if(event==="loadEnd"){</span>
+<span class="cstat-no" title="statement not covered" >					_handler.addAlwaysHandler(cb,thisArg);</span>
+				}
+				else{
+<span class="cstat-no" title="statement not covered" >					throw new ReferenceError("event was not registerd")</span>
+				}
+<span class="cstat-no" title="statement not covered" >				return me;</span>
+			},
+			success:function(cb,thisArg){
+				_handler.addSuccessHandler(cb,thisArg);
+				return me;
+			},
+			fail:function(cb,thisArg){
+				_handler.addFailHandler(cb,thisArg);
+				return me;
+			},
+			always:function(cb,thisArg){
+				_handler.addAlwaysHandler(cb,thisArg);
+				return me;
+			},
+			onProgress:function(cb,thisArg){
+				_handler.addProgressHandler(cb,thisArg);
+				return me;
+			},
+			getResponse:function(){return _handler.xhr.response;},
+			getHTTPCode:function(detail){
+				//detail is default true
+				detail=(typeof detail==="undefined")||!!detail;
+				if(detail){
+					return _handler.detailedStatus();
+				}
+				//else
+				return _handler.xhr.status;
+			},
+			_getHandler:function(){ return _handler},
+			_getXHRObject:<span class="fstat-no" title="function not covered" >function(){</span> <span class="cstat-no" title="statement not covered" >return _handler.xhr}</span>
+		};
+		return me;
+	}
+	
+	function AJAXHandler(url,opts){
+		var _responseTypes=["text"/*,"arraybuffer","blob","document"*/,"json"];
+		this.callbacks={
+			success:[],
+			fail:[],
+			always:[],
+			progress:[]
+		};
+		<span class="missing-if-branch" title="else path not taken" >E</span>if(typeof opts==="undefined"){
+			opts={};
+		}
+		this.url=url;
+		this.method= ((opts.method&amp;&amp;<span class="branch-1 cbranch-no" title="branch not covered" >opts.method==="POST")</span>?<span class="branch-0 cbranch-no" title="branch not covered" >"POST":</span>"GET");
+		
+		this.done=false;
+		this.success=false;
+		this.xhr=_xhrObject();
+		//this does not work in IE11 xhr.responseType does nothing, but chrome works fine
+		this.responseType=_responseTypes[_responseTypes.indexOf(opts.type)]||_responseTypes[0];
+		this.postVars=opts.data||null;
+		
+		this.init();
+	}	AJAXHandler.prototype.addSuccessHandler=function(callback,thisArg){
+		if(!thisArg){
+			thisArg=this.xhr;
+		}
+		//check if document state is complete
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (this.done&amp;&amp;<span class="branch-1 cbranch-no" title="branch not covered" >this.success)</span>{
+			
+<span class="cstat-no" title="statement not covered" >			callback.apply(thisArg,this.eventDetails);</span>
+		}
+		else{
+			//add to executionList;
+			this.callbacks.success.push([callback,thisArg]);
+			
+		}
+	};
+	AJAXHandler.prototype.addFailHandler=function(callback,thisArg){
+		if(!thisArg){
+			thisArg=this.xhr;
+		}
+		//check if document state is complete
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (this.done&amp;&amp;<span class="branch-1 cbranch-no" title="branch not covered" >!this.success)</span>{
+			
+<span class="cstat-no" title="statement not covered" >			callback.apply(thisArg,this.eventDetails);</span>
+		}
+		else{
+			//add to executionList;
+			this.callbacks.fail.push([callback,thisArg]);
+			
+		}
+	};
+	AJAXHandler.prototype.addAlwaysHandler=function(callback,thisArg){
+		if(!thisArg){
+			thisArg=this.xhr;
+		}
+		//check if document state is complete
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (this.done){
+			
+<span class="cstat-no" title="statement not covered" >			callback.apply(thisArg,this.eventDetails);</span>
+		}
+		else{
+			//add to executionList;
+			this.callbacks.always.push([callback,thisArg]);
+			
+		}
+	};
+	AJAXHandler.prototype.addProgressHandler=function(callback,thisArg){
+		if(!thisArg){
+			thisArg=this.xhr;
+		}
+		//check if document state is complete
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (this.done){
+			
+			//callback.apply(thisArg,this.eventDetails);
+		}
+		else{
+			//add to executionList;
+			this.callbacks.progress.push([callback,thisArg]);
+			
+		}
+	};
+	AJAXHandler.prototype.removeHandlers=function(){
+		this.callbacks={
+			success:[],
+			fail:[],
+			always:[],
+			progress:[]
+		};
+	};
+	AJAXHandler.prototype.detailedStatus=function(){
+		var result=this.xhr.status+" "+_statusCodeRanges(this.xhr.status);
+		<span class="missing-if-branch" title="else path not taken" >E</span>if(_statusCodesDetails.hasOwnProperty(this.xhr.status)){
+			result+="-"+_statusCodesDetails[this.xhr.status];
+		}
+		return result;
+	};
+	AJAXHandler.prototype.init=function () {
+		this.xhr.addEventListener("progress", this.updateProgress.bind(this));
+		this.xhr.open(this.method, this.url, true); //true for async
+		/*TO DO does not work for IE better testing needed for chrome eg json with pure html page=&gt; load error?*/
+		//this.xhr.responseType =this.responseType;
+		/*
+		Setting the value of responseType to "document" is ignored if done in a  Worker environment. 
+		When setting responseType to a particular value, the author should make sure that the server is actually 
+		sending a response compatible to that format. If the server returns data that is not compatible to the responseType that was set, 
+		the value of response will be null. Also, setting responseType for synchronous requests will throw an InvalidAccessError exception.
+		ref https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType */
+		this.xhr.onreadystatechange = this.readyStateEvent.bind(this);
+		this.xhr.send(this.postVars);
+	};
+	
+	AJAXHandler.prototype.updateProgress=function(event){
+		this.executeHandlers(['progress'],[event]);
+	};
+	AJAXHandler.prototype.getAbsoluteURL=<span class="fstat-no" title="function not covered" >function(){</span>
+<span class="cstat-no" title="statement not covered" >		return getAbsoluteURL(this.url);</span>
+	};
+	AJAXHandler.prototype.readyStateEvent=function(){
+		var contentType;
+		if (this.xhr.readyState === 2){
+			//setContentType
+			contentType=this.xhr.getResponseHeader("content-type").split('/');
+			this.contenType={
+				type:contentType[0],
+				subType:contentType[1]
+			};
+			return;
+		}
+		else if (this.xhr.readyState !== 4){
+			return;
+		}
+		//else equals 4
+		this.eventDetails=[this.xhr.response,this.detailedStatus(),this.xhr,this];
+		this.done=true;
+		
+		if(this.xhr.status &gt;= 200 &amp;&amp; this.xhr.status&lt;300){
+			this.success=true;
+			this.eventDetails[0]=this.parseType(this.eventDetails[0]);
+		}
+		if(this.success){
+			//success
+			this.executeHandlers(['success','always'],this.eventDetails);
+		}
+		else{
+			//fail
+			this.executeHandlers(['fail','always'],this.eventDetails);
+		}
+		this.removeHandlers();
+	};
+	AJAXHandler.prototype.parseType=function(response){
+		//this function may adapt the success outcome
+		var result;
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (this.responseType==="json"){
+<span class="cstat-no" title="statement not covered" >			try{</span>
+<span class="cstat-no" title="statement not covered" >				result=JSON.parse(response);</span>
+			}
+			catch(err){
+				//parsing was not possible
+<span class="cstat-no" title="statement not covered" >				this.success=false;</span>
+<span class="cstat-no" title="statement not covered" >				result="Problem parsing JSON: partial response: "+response.substring(1, 157)+"...";</span>
+			}
+		}
+		else{
+			result=response;
+		}
+		return result;
+	};
+	AJAXHandler.prototype.executeHandlers=function (types,event) {
+		var i,l;
+		for(i=0, l=types.length;i&lt;l;i++){
+			<span class="missing-if-branch" title="else path not taken" >E</span>if(this.callbacks.hasOwnProperty(types[i])){
+				this.callbacks[types[i]].forEach(function(cb){
+					cb[0].apply(cb[1],event);
+				});
+			}
+		}
+	};
+/*test
+after test no memoryleaks found onreadystatechange is garbage collected!
+&nbsp;
+var a=$b.ajax("nieuwsblad.be")
+	.success(function(){
+		console.log('success');
+		console.log(arguments)
+		console.log(this);
+	})
+	.fail(function(){
+		console.log('fail');
+		console.log(arguments)
+		console.log(this);
+	})
+	.always(function(){
+		console.log('always');
+		console.log(arguments)
+		console.log(this);
+	});
+var b=setTimeout(function(){
+    a.success(function(){
+			console.log('success2');
+			console.log(arguments)
+			console.log(this);
+		})
+		.fail(function(){
+			console.log('fail2');
+			console.log(arguments)
+			console.log(this);
+		})
+		.always(function(){
+			console.log('always2');
+			console.log(arguments)
+			console.log(this);
+		});
+}, 2000);
+&nbsp;
+*/
+&nbsp;
+exports.ajax = xassistAjax;
+&nbsp;
+Object.defineProperty(exports, '__esModule', { value: true });
+&nbsp;
+})));
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Apr 11 2018 13:08:50 GMT+0200 (Romance Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

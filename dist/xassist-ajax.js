@@ -2,7 +2,7 @@
 * @preserve
 * https://github.com/GregBee2/xassist-ajax.git Version 0.0.1.
 *  Copyright 2018 Gregory Beirens.
-*  Created on Wed, 11 Apr 2018 09:51:57 GMT.
+*  Created on Wed, 11 Apr 2018 11:08:49 GMT.
 */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :

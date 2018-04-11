@@ -5,10 +5,10 @@
 				return new XMLHttpRequest();
 			},
 			function () {
-				return new ActiveXObject('Msxml2.XMLHTTP');
+				return new window.ActiveXObject('Msxml2.XMLHTTP');
 			},
 			function () {
-				return new ActiveXObject('Microsoft.XMLHTTP');
+				return new window.ActiveXObject('Microsoft.XMLHTTP');
 			}
 		];
 		for (var i = 0, len = methods.length; i < len; i++) {
@@ -52,7 +52,7 @@
 		if (old_base) old_base.href = old_href;
 		else doc_head.removeChild(our_base);
 		return resolved_url;
-	};
+	}
 	export default function(url,opts){
 		var _handler=new AJAXHandler(url,opts);
 		var me;
@@ -129,7 +129,7 @@
 		this.postVars=opts.data||null;
 		
 		this.init();
-	};
+	}
 	AJAXHandler.prototype.addSuccessHandler=function(callback,thisArg){
 		if(!thisArg){
 			thisArg=this.xhr;
@@ -277,7 +277,7 @@
 		return result;
 	}
 	AJAXHandler.prototype.executeHandlers=function (types,event) {
-		var me=this,i,l;
+		var i,l;
 		for(i=0,l=types.length;i<l;i++){
 			if(this.callbacks.hasOwnProperty(types[i])){
 				this.callbacks[types[i]].forEach(function(cb){
