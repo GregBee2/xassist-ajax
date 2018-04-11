@@ -1,5 +1,16 @@
-	"use strict"
-	var _xhrObject=(function () { // Factory method.
+/**
+* @preserve
+* https://github.com/GregBee2/xassist-ajax.git Version 0.0.1.
+*  Copyright 2018 Gregory Beirens.
+*  Created on Wed, 11 Apr 2018 09:51:57 GMT.
+*/
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global.xa = global.xa || {})));
+}(this, (function (exports) { 'use strict';
+
+var _xhrObject=(function () { // Factory method.
 		var methods = [
 			function () {
 				return new XMLHttpRequest();
@@ -52,8 +63,7 @@
 		if (old_base) old_base.href = old_href;
 		else doc_head.removeChild(our_base);
 		return resolved_url;
-	};
-	export default function(url,opts){
+	}	function xassistAjax(url,opts){
 		var _handler=new AJAXHandler(url,opts);
 		var me;
 		me={
@@ -103,7 +113,7 @@
 			},
 			_getHandler:function(){ return _handler},
 			_getXHRObject:function(){ return _handler.xhr}
-		}
+		};
 		return me;
 	}
 	
@@ -129,8 +139,7 @@
 		this.postVars=opts.data||null;
 		
 		this.init();
-	};
-	AJAXHandler.prototype.addSuccessHandler=function(callback,thisArg){
+	}	AJAXHandler.prototype.addSuccessHandler=function(callback,thisArg){
 		if(!thisArg){
 			thisArg=this.xhr;
 		}
@@ -216,7 +225,7 @@
 		sending a response compatible to that format. If the server returns data that is not compatible to the responseType that was set, 
 		the value of response will be null. Also, setting responseType for synchronous requests will throw an InvalidAccessError exception.
 		ref https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType */
-		this.xhr.onreadystatechange = this.readyStateEvent.bind(this)
+		this.xhr.onreadystatechange = this.readyStateEvent.bind(this);
 		this.xhr.send(this.postVars);
 	};
 	
@@ -234,7 +243,7 @@
 			this.contenType={
 				type:contentType[0],
 				subType:contentType[1]
-			}
+			};
 			return;
 		}
 		else if (this.xhr.readyState !== 4){
@@ -257,7 +266,7 @@
 			this.executeHandlers(['fail','always'],this.eventDetails);
 		}
 		this.removeHandlers();
-	}
+	};
 	AJAXHandler.prototype.parseType=function(response){
 		//this function may adapt the success outcome
 		var result;
@@ -275,10 +284,10 @@
 			result=response;
 		}
 		return result;
-	}
+	};
 	AJAXHandler.prototype.executeHandlers=function (types,event) {
-		var me=this,i,l;
-		for(i=0,l=types.length;i<l;i++){
+		var i,l;
+		for(i=0, l=types.length;i<l;i++){
 			if(this.callbacks.hasOwnProperty(types[i])){
 				this.callbacks[types[i]].forEach(function(cb){
 					cb[0].apply(cb[1],event);
@@ -324,3 +333,9 @@ var b=setTimeout(function(){
 }, 2000);
 
 */
+
+exports.ajax = xassistAjax;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

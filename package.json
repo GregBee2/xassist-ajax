@@ -30,6 +30,7 @@
   "devDependencies": {
     "csv2readme": "^1.0.1",
     "rimraf": "^2.6.2",
+	"jsdom": "^11.6.2",
     "rollup": "^0.56.3",
     "tape": "^4.9.0"
   },
