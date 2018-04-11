@@ -2,7 +2,7 @@
 * @preserve
 * https://github.com/GregBee2/xassist-ajax.git Version 0.0.1.
 *  Copyright 2018 Gregory Beirens.
-*  Created on Wed, 11 Apr 2018 11:08:49 GMT.
+*  Created on Wed, 11 Apr 2018 11:13:02 GMT.
 */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
@@ -16,10 +16,10 @@ var _xhrObject=(function () { // Factory method.
 				return new XMLHttpRequest();
 			},
 			function () {
-				return new ActiveXObject('Msxml2.XMLHTTP');
+				return new window.ActiveXObject('Msxml2.XMLHTTP');
 			},
 			function () {
-				return new ActiveXObject('Microsoft.XMLHTTP');
+				return new window.ActiveXObject('Microsoft.XMLHTTP');
 			}
 		];
 		for (var i = 0, len = methods.length; i < len; i++) {
@@ -63,7 +63,8 @@ var _xhrObject=(function () { // Factory method.
 		if (old_base) old_base.href = old_href;
 		else doc_head.removeChild(our_base);
 		return resolved_url;
-	}	function xassistAjax(url,opts){
+	}
+	function xassistAjax(url,opts){
 		var _handler=new AJAXHandler(url,opts);
 		var me;
 		me={
@@ -139,7 +140,8 @@ var _xhrObject=(function () { // Factory method.
 		this.postVars=opts.data||null;
 		
 		this.init();
-	}	AJAXHandler.prototype.addSuccessHandler=function(callback,thisArg){
+	}
+	AJAXHandler.prototype.addSuccessHandler=function(callback,thisArg){
 		if(!thisArg){
 			thisArg=this.xhr;
 		}
