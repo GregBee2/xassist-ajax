@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">77.46% </span>
+        <span class="strong">76.55% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>110/142</span>
+        <span class='fraction'>111/145</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">53.66% </span>
+        <span class="strong">53.57% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>44/82</span>
+        <span class='fraction'>45/84</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">81.25% </span>
+        <span class="strong">78.79% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>26/32</span>
+        <span class='fraction'>26/33</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">78.01% </span>
+        <span class="strong">77.62% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>110/141</span>
+        <span class='fraction'>111/143</span>
       </div>
     </div>
   </div>
@@ -386,7 +386,12 @@
 341
 342
 343
-344</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+344
+345
+346
+347
+348
+349</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -398,6 +403,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -422,6 +428,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7×</span>
@@ -733,7 +743,7 @@
 * @preserve
 * https://github.com/GregBee2/xassist-ajax.git Version 1.0.1.
 *  Copyright 2018 Gregory Beirens.
-*  Created on Wed, 11 Apr 2018 11:14:27 GMT.
+*  Created on Tue, 17 Apr 2018 10:54:18 GMT.
 */
 (function (global, factory) {
 	typeof exports === 'object' &amp;&amp; typeof module !== 'undefined' ? factory(exports) :
@@ -742,29 +752,34 @@
 }(this, (function (exports) { 'use strict';
 &nbsp;
 var _xhrObject=(function () { // Factory method.
-		var methods = [
-			function () {
-				return new XMLHttpRequest();
-			},
-<span class="fstat-no" title="function not covered" >			function () {</span>
-<span class="cstat-no" title="statement not covered" >				return new window.ActiveXObject('Msxml2.XMLHTTP');</span>
-			},
-<span class="fstat-no" title="function not covered" >			function () {</span>
-<span class="cstat-no" title="statement not covered" >				return new window.ActiveXObject('Microsoft.XMLHTTP');</span>
+		<span class="missing-if-branch" title="else path not taken" >E</span>if(typeof document !== "undefined"){
+			var methods = [
+				function () {
+					return new XMLHttpRequest();
+				},
+<span class="fstat-no" title="function not covered" >				function () {</span>
+<span class="cstat-no" title="statement not covered" >					return new window.ActiveXObject('Msxml2.XMLHTTP');</span>
+				},
+<span class="fstat-no" title="function not covered" >				function () {</span>
+<span class="cstat-no" title="statement not covered" >					return new window.ActiveXObject('Microsoft.XMLHTTP');</span>
+				}
+			];
+			for (var i = 0, len = methods.length; i &lt; len; i++) {
+				try {
+					methods[i]();
+				} catch (e) {
+<span class="cstat-no" title="statement not covered" >					continue;</span>
+				}
+				// If we reach this point, method[i] worked.
+				// Memoize the method. by storing it in the variable
+				return methods[i];
 			}
-		];
-		for (var i = 0, len = methods.length; i &lt; len; i++) {
-			try {
-				methods[i]();
-			} catch (e) {
-<span class="cstat-no" title="statement not covered" >				continue;</span>
-			}
-			// If we reach this point, method[i] worked.
-			// Memoize the method. by storing it in the variable
-			return methods[i];
+			// If we reach this point, none of the methods worked.
+<span class="cstat-no" title="statement not covered" >			throw new Error('AjaxHandler: Could not create an XHR object.');</span>
 		}
-		// If we reach this point, none of the methods worked.
-<span class="cstat-no" title="statement not covered" >		throw new Error('AjaxHandler: Could not create an XHR object.');</span>
+		else{
+<span class="cstat-no" title="statement not covered" >			return <span class="fstat-no" title="function not covered" >function(){<span class="cstat-no" title="statement not covered" ></span>return false;}</span>;</span>
+		}
 	})(),
 	_statusCodeRanges=function(statusCode){
 		var ranges=["1xx Informational responses","2xx Success","3xx Redirection","4xx Client errors","5xx Server errors"],
@@ -1078,7 +1093,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Apr 11 2018 13:14:27 GMT+0200 (Romance Daylight Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Apr 17 2018 12:54:18 GMT+0200 (Romance Daylight Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

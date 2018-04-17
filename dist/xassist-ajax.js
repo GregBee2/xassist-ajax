@@ -2,7 +2,7 @@
 * @preserve
 * https://github.com/GregBee2/xassist-ajax.git Version 1.0.1.
 *  Copyright 2018 Gregory Beirens.
-*  Created on Wed, 11 Apr 2018 11:14:27 GMT.
+*  Created on Tue, 17 Apr 2018 10:54:18 GMT.
 */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
@@ -11,29 +11,34 @@
 }(this, (function (exports) { 'use strict';
 
 var _xhrObject=(function () { // Factory method.
-		var methods = [
-			function () {
-				return new XMLHttpRequest();
-			},
-			function () {
-				return new window.ActiveXObject('Msxml2.XMLHTTP');
-			},
-			function () {
-				return new window.ActiveXObject('Microsoft.XMLHTTP');
+		if(typeof document !== "undefined"){
+			var methods = [
+				function () {
+					return new XMLHttpRequest();
+				},
+				function () {
+					return new window.ActiveXObject('Msxml2.XMLHTTP');
+				},
+				function () {
+					return new window.ActiveXObject('Microsoft.XMLHTTP');
+				}
+			];
+			for (var i = 0, len = methods.length; i < len; i++) {
+				try {
+					methods[i]();
+				} catch (e) {
+					continue;
+				}
+				// If we reach this point, method[i] worked.
+				// Memoize the method. by storing it in the variable
+				return methods[i];
 			}
-		];
-		for (var i = 0, len = methods.length; i < len; i++) {
-			try {
-				methods[i]();
-			} catch (e) {
-				continue;
-			}
-			// If we reach this point, method[i] worked.
-			// Memoize the method. by storing it in the variable
-			return methods[i];
+			// If we reach this point, none of the methods worked.
+			throw new Error('AjaxHandler: Could not create an XHR object.');
 		}
-		// If we reach this point, none of the methods worked.
-		throw new Error('AjaxHandler: Could not create an XHR object.');
+		else{
+			return function(){return false;};
+		}
 	})(),
 	_statusCodeRanges=function(statusCode){
 		var ranges=["1xx Informational responses","2xx Success","3xx Redirection","4xx Client errors","5xx Server errors"],

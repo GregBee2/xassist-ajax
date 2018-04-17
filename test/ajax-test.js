@@ -9,6 +9,7 @@ var doc=new jsdom.JSDOM("<!DOCTYPE html><h1 id='one'></h1>",{
 
 	}
 )
+global.document=doc.window.document;
 global.window=doc.window;
 XMLHttpRequest=doc.window.XMLHttpRequest;
 var definition = require("../package.json");
